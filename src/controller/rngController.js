@@ -1,7 +1,7 @@
-import { random, seed } from '..\randomNumberGenerator.js';
+import { random, seed } from '../randomNumberGenerator';
 
 // Define a função para gerar os valores aleatórios
-export const generateRandomValues = (req, res) => {
+export const geraRandomNumbers = (req, res) => {
   seed(192837465); // Define a semente como 192837465
 
   const map = new Map();
