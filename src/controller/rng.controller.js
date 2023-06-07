@@ -1,20 +1,22 @@
-import { random, seed } from '../randomNumberGenerator';
+import { random, seed } from '../randomNumberGenerator.js';
 
 // Define a função para gerar os valores aleatórios
-export const geraRandomNumbers = (req, res) => {
+function geraRandomNumbers() {
   seed(192837465); // Define a semente como 192837465
 
   const map = new Map();
 
   // Itera 9 vezes, de 0 a 8
-  for (let i = 0; i <= 8; i++) {
+  for (let i = 0; i < 9; i++) {
     // Salva o índice como chave no Map e chama a função random para o valor
     map.set(i, random());
   }
 
   // Converte os valores do Map em um array
-  const randomValues = Array.from(map.values());
+  const randomValues = Array.from(map.values()).join('<br>').toString();
 
   // Retorna os valores gerados
-  res.json(randomValues);
+  return randomValues
 };
+
+export default geraRandomNumbers;

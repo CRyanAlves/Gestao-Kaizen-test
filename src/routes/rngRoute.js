@@ -1,14 +1,10 @@
 import express from "express";
-import {geraRandomNumbers} from "../controller/rngController"
+import  geraRandomNumbers from "../controller/rng.controller.js"
 
 const app = express();
 
 app.use(express.json());
 
-app.get('/', geraRandomNumbers)
+app.get('/', (req, res) => { res.send(geraRandomNumbers())})
 
-
-
-
-
-app.listen('38000', () => console.log('listening on http://localhost:38000'))
+export default app;
