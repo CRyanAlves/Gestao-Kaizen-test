@@ -1,8 +1,8 @@
-import app from '../routes/rngRoute.js'
+import app from './app.js'
 
 const PORTA = 3333
 
-// fazer a conexao
+// faz a conexao
 
   app.listen(PORTA, () => {
     console.log(`Servidor rodando no endereço http://localhost:${PORTA}`)
